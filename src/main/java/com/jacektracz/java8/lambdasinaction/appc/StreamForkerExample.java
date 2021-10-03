@@ -1,12 +1,12 @@
 package com.jacektracz.java8.lambdasinaction.appc;
 
-import static com.jacektracz.java8.lambdasinaction.chap6.Dish.menu;
+import static com.jacektracz.java8.lambdasinaction.collectors.Dish.menu;
 import static java.util.stream.Collectors.*;
 
 import java.util.*;
 import java.util.stream.*;
 
-import com.jacektracz.java8.lambdasinaction.chap6.*;
+import com.jacektracz.java8.lambdasinaction.collectors.*;
 
 public class StreamForkerExample {
 

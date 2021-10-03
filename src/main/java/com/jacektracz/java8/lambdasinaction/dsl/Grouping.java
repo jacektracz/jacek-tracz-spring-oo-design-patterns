@@ -21,9 +21,9 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collector;
 
-import com.jacektracz.java8.lambdasinaction.chap6.Dish;
+import com.jacektracz.java8.lambdasinaction.collectors.Dish;
 
-import static com.jacektracz.java8.lambdasinaction.chap6.Dish.menu;
+import static com.jacektracz.java8.lambdasinaction.collectors.Dish.menu;
 import static com.jacektracz.java8.lambdasinaction.dsl.Grouping.GroupingBuilder.groupOn;
 import static java.util.stream.Collectors.groupingBy;
 
