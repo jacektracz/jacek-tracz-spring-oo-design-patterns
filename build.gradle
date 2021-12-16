@@ -28,8 +28,8 @@ dependencies {
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation 'com.google.guava:guava:28.0-jre'
     implementation group: 'org.web3j', name: 'core', version: '5.0.0'
-    
-
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.32'
+	implementation group: 'commons-logging', name: 'commons-logging', version: '1.1.1'
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
 }

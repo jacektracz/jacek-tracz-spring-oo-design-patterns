@@ -24,32 +24,37 @@ public class LkdTreeNode {
 	private List<LkdTreeNode> childs = new ArrayList<>();
 
 	public void createDirectChilds(final String parentChildsIndicator) {
-		nodeIndicator = "X";
-		childsIndicator = parentChildsIndicator;
-		createDirectChildsFromChildsIndicator(parentChildsIndicator);	
+		this.nodeIndicator = "X";
+		this.childsIndicator = parentChildsIndicator;
+		this.createDirectChildsFromChildsIndicator(parentChildsIndicator);	
 	}
 
 	public void createTreeForInput(final String parentChildsIndicator) {
-		nodeIndicator = "X";
+		this.nodeIndicator = "X";
 		this.parentChildsIndicator = parentChildsIndicator;
 		this.childsIndicator = parentChildsIndicator;
 		this.nodeLevel = 0;
-		setParentCurrentChildIndex(-1);
-		createTree();	
+		this.setParentCurrentChildIndex(-1);
+		this.createNodeTreeChildsFromChildsIndicator();	
 	}
 	
-	public void createTree() {
-		createDirectChildsFromChildsIndicator(childsIndicator);
-		createTreeFromDirectChilds();		
+	public void createNodeTreeChildsFromChildsIndicator() {
+		
+		if(this.getParentNode() != null) {
+			String indicator = this.getParentNode().getChildsIndicator();
+			this.setParentChildsIndicator(indicator);			
+		}
+		this.createDirectChildsFromChildsIndicator(
+				this.childsIndicator);
+		this.createTreeFromDirectChilds();		
 	}
 	
 	public void createTreeFromDirectChilds() {
 		childs.stream()
-			.forEach(node -> node.createTree());				
+			.forEach(node -> node.createNodeTreeChildsFromChildsIndicator());				
 	}
 	
-	public void createDirectChildsFromChildsIndicator(final String parentChildsIndicator) {
-		this.setParentChildsIndicator( parentChildsIndicator);		
+	public void createDirectChildsFromChildsIndicator(final String parentChildsIndicator) {			
 		int length = parentChildsIndicator.length();
 		if(length == 0) {
 			return;
@@ -73,7 +78,7 @@ public class LkdTreeNode {
 		else if(version == 2) {
 			this.childs = IntStream.range(0, length)
 			.boxed()
-			.map( index ->  getChildNode(index,parentChildsIndicator))
+			.map( index ->  getChildNode(index, parentChildsIndicator))
 			.collect(Collectors.toList());
 		}
 		
@@ -81,7 +86,7 @@ public class LkdTreeNode {
 	
 	public void createChildNode(int currentIndex,final String parentChildsIndicator,final List<LkdTreeNode> pchilds) {
 		LkdTreeNode child = new LkdTreeNode();
-		child.setParentChildsIndicator( parentChildsIndicator);
+		//child.setParentChildsIndicator( parentChildsIndicator);
 		child.setParentCurrentChildIndex(currentIndex);
 		child.setParentNode(this);
 		child.createNodeAndChildsIndicators(parentChildsIndicator, currentIndex );
@@ -92,7 +97,7 @@ public class LkdTreeNode {
 	public LkdTreeNode getChildNode(int currentIndex, final String parentChildsIndicator) {
 		
 		LkdTreeNode child = new LkdTreeNode();
-		child.setParentChildsIndicator( parentChildsIndicator);
+		//child.setParentChildsIndicator( parentChildsIndicator);
 		child.setParentCurrentChildIndex(currentIndex);
 		child.setParentNode(this);		
 		child.createNodeAndChildsIndicators(parentChildsIndicator, currentIndex );
@@ -101,31 +106,26 @@ public class LkdTreeNode {
 	}
 	
 	public void computeAndSetNodeLevel() {
-		List<LkdTreeNode> path = getNodesToRoot();
-		nodeLevel = path.size()-1;		
+		final List<LkdTreeNode> path = getNodesToRoot();
+		this.nodeLevel = path.size()-1;		
 	}	
 	
 	public void createNodeAndChildsIndicators( final String parentChildsIndicator, int currentIndex) {
-		this.setParentChildsIndicator( parentChildsIndicator);
-		this.setParentCurrentChildIndex(currentIndex);
-		createNodeIndicator(parentChildsIndicator,currentIndex);
-		createChildsIndicator(parentChildsIndicator,currentIndex);		
+		this.createNodeIndicator(parentChildsIndicator,currentIndex);
+		this.createChildsIndicator(parentChildsIndicator,currentIndex);		
 	}
 	
 	public void createNodeIndicator( final String parentChildsIndicator, int currentIndex) {
-		this.setParentChildsIndicator( parentChildsIndicator);
-		this.setParentCurrentChildIndex(currentIndex);
 		final String nv = getNodeIndicatorFromParentChildsIndicatorForPosition(parentChildsIndicator, currentIndex);
-		nodeIndicator = nv;
+		this.nodeIndicator = nv;
 	}
 	
 	public void createChildsIndicator( final String parentChildsIndicator, int currentIndex) {
-		this.setParentChildsIndicator( parentChildsIndicator);
-		this.setParentCurrentChildIndex(currentIndex);
+		//this.setParentChildsIndicator( parentChildsIndicator);		
 		this.setParentCurrentChildIndex(currentIndex);
 		final String right = getRightPartChildsIndicatorFromParentChildsIndicatorForIndexPosition(parentChildsIndicator, currentIndex);
 		final String left = getLeftPartChildsIndicatorFromParentChildsIndicatorForIndexPosition(parentChildsIndicator, currentIndex);
-		childsIndicator = left + right;
+		this.childsIndicator = left + right;
 	}
 	
 	public static String getNodeIndicatorFromParentChildsIndicatorForPosition(final String parentChildsIndicator, int currentIndex) {

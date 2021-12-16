@@ -1,5 +1,6 @@
 package com.jacektracz.web3j.ecc;
 
+/*
 
 import org.bouncycastle.util.encoders.Hex;
 import org.web3j.crypto.*;
@@ -30,12 +31,12 @@ public class EccExample {
         System.out.println("Msg: " + msg);
         
         System.out.println("Msg hash: " + Hex.toHexString(msgHash));
-        /*
+        
         System.out.printf("Signature: [v = %d, r = %s, s = %s]\n",
                 signature.getV() - 27,
                 Hex.toHexString(signature.getR()),
                 Hex.toHexString(signature.getS()));
-         */
+        
         System.out.println();
 
         BigInteger pubKeyRecovered = Sign.signedMessageToKey(msg.getBytes(), signature);
@@ -49,3 +50,4 @@ public class EccExample {
     }
 
 }
+*/

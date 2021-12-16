@@ -19,6 +19,10 @@ import com.jacektracz.java8.lambdasinaction.methodreference.ExchangeService.Mone
 
 public class BestPriceFinder {
 
+	final protected void compute() {
+		
+	}
+	
     private final List<Shop> shops = Arrays.asList(new Shop("BestPrice"),
                                                    new Shop("LetsSaveBig"),
                                                    new Shop("MyFavoriteShop"),
