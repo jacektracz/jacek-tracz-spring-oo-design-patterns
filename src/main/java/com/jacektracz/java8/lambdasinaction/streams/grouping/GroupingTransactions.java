@@ -46,7 +46,9 @@ public class GroupingTransactions {
     }
 
     private static void groupFunctionally() {
-        Map<Currency, List<Transaction>> transactionsByCurrencies = transactions.stream().collect(groupingBy(Transaction::getCurrency));
+        Map<Currency, List<Transaction>> transactionsByCurrencies = 
+        		transactions.stream().collect(
+        				groupingBy(Transaction::getCurrency));
         System.out.println(transactionsByCurrencies);
     }
 
