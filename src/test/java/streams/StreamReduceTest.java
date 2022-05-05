@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.BinaryOperator;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class StreamReduceTest {
 

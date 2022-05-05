@@ -8,7 +8,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.BinaryOperator;
 
-import org.junit.Test;
+//import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Test;
 
 import com.jacektracz.java8.samples.concurrent.JavaCompletableFutureDesignPattern;
 import com.jacektracz.java8.samples.concurrent.JavaCyclicBarrierDesignPattern;

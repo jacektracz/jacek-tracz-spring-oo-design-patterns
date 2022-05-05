@@ -3,7 +3,7 @@
  */
 package java_8_jacektracz_tutorial;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import com.jacektracz.java8.starter.Library;
 
