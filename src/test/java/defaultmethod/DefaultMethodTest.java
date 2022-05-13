@@ -1,9 +1,9 @@
 package defaultmethod;
 
+import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.CoreMatchers.*;
 
-import org.junit.Ignore;
+
 import org.junit.jupiter.api.Test;
 
 public class DefaultMethodTest {
@@ -11,7 +11,7 @@ public class DefaultMethodTest {
 	/**
 	 * In this example, we don't need to use the default method send() from PaymentService interface 
 	 */
-	@Ignore
+
 	@Test
 	public void shouldRetrieveTheDefaultFees() throws Exception {
 		PaymentService service = new PayPalPaymentService();

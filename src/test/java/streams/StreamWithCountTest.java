@@ -1,7 +1,7 @@
 package streams;
 
+import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.CoreMatchers.*;
 
 import java.util.Arrays;
 import java.util.List;

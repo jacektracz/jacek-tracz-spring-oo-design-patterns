@@ -1,11 +1,7 @@
 package comparator;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-//import static org.hamcrest.Matchers.*;
-
 import java.util.Comparator;
 
-import org.hamcrest.Matcher;
 import org.junit.jupiter.api.Test;
 
 public class ComparatorFunctionalInterfaceTest {

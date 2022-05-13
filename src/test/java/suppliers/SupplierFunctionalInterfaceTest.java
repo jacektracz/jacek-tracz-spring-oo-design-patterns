@@ -1,8 +1,5 @@
 package suppliers;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-//import static org.hamcrest.Matchers.equalTo;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -10,8 +7,9 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import org.junit.jupiter.api.Test;
+//import org.junit.jupiter.api.Test;
 
+import org.junit.Test;
 public class SupplierFunctionalInterfaceTest {
 
 	@Test
