@@ -22,6 +22,6 @@
 	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
 	<classpathentry kind="lib" path="C:/lkd/servers/installed/Java/junit/hamcrest-core-1.3.jar"/>
 	<classpathentry kind="lib" path="C:/lkd/servers/installed/Java/junit/junit-4.13.2.jar"/>
-	<classpathentry kind="lib" path="C:/lkd/servers/installed/Java/jdk11adopt/lib/jrt-fs.jar"/>
+	<classpathentry kind="lib" path="C:/lkd/servers/installed/Java/jdk11adopt/lib/jrt-fs.jar" sourcepath="C:/lkd/servers/installed/Java/jdk11adopt/lib/src.zip"/>
 	<classpathentry kind="output" path="bin/default"/>
 </classpath>
